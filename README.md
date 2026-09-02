@@ -111,7 +111,8 @@ export default MovieList;
 
 Voici une démo complète avec l'affichage des films :
 
-{% capture app_js %}
+```jsx
+// app.js
 import { useState } from "react";
 
 import MovieList from "./components/MovieList";
@@ -144,9 +145,10 @@ function App() {
 }
 
 export default App;
-{% endcapture %}
+```
 
-{% capture movielist_js %}
+```jsx
+// components/MovieList.js
 import { useContext } from "react";
 
 import MovieContext from "../contexts/MovieContext";
@@ -169,22 +171,16 @@ function MovieList() {
 }
 
 export default MovieList;
-{% endcapture %}
+```
 
-{% capture moviecontext_js %}
+```jsx
+// contexts/MovieContext.js
 import { createContext } from "react";
 
 const MovieContext = createContext(null);
 
 export default MovieContext;
-{% endcapture %}
-
-{% include playground.html
-  id="demo-movies"
-  title="Démo : Liste de films avec Context"
-  my_js=app_js
-  default_tab="js"
-%}
+```
 
 ## Changer l'état dans le contexte
 
@@ -208,7 +204,8 @@ const { movies, setMovies } = useContext(MovieContext);
 
 Dans un exemple en live :
 
-{% capture app_js_2 %}
+```jsx
+// App.js
 import { useState } from "react";
 
 import MovieList from "./components/MovieList";
@@ -241,9 +238,10 @@ function App() {
 }
 
 export default App;
-{% endcapture %}
+```
 
-{% capture movielist_js_2 %}
+```jsx
+// components/MovieList.js
 import { useContext } from "react";
 
 import MovieContext from "../contexts/MovieContext";
@@ -282,22 +280,16 @@ function MovieList() {
 }
 
 export default MovieList;
-{% endcapture %}
+```
 
-{% capture moviecontext_js_2 %}
+```jsx
+// contexts/MovieContext.js
 import { createContext } from "react";
 
 const MovieContext = createContext(null);
 
 export default MovieContext;
-{% endcapture %}
-
-{% include playground.html
-  id="demo-movies-state"
-  title="Démo : Modifier l'état dans le context"
-  my_js=app_js_2
-  default_tab="js"
-%}
+```
 
 ## Challenge
 
@@ -312,7 +304,8 @@ Dans ce défi, tu vas réaliser une application simple qui changera le statut de
 * Modifie le texte pour qu'il affiche "en ligne" si la valeur booléenne est "true", et "hors ligne" si la valeur est "false" ;
 * Ajoute un écouteur d'événement sur le bouton qui appellera `setIsOnline` et basculera la valeur de `isOnline`.
 
-{% capture app_js_challenge %}
+```jsx
+// App.js
 import "./App.css";
 
 import UserProfile from "./components/UserProfile";
@@ -322,9 +315,10 @@ function App() {
 }
 
 export default App;
-{% endcapture %}
+```
 
-{% capture app_css_challenge %}
+```css
+/* App.css */
 button {
   box-shadow: 0px 10px 14px -7px #3e7327;
   background: linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
@@ -338,9 +332,10 @@ button {
   text-decoration: none;
   text-shadow: 0px 1px 0px #5b8a3c;
 }
-{% endcapture %}
+```
 
-{% capture userprofile_js_challenge %}
+```jsx
+// components/UserProfile.js
 import React from "react";
 
 function UserProfile() {
@@ -354,21 +349,14 @@ function UserProfile() {
 }
 
 export default UserProfile;
-{% endcapture %}
+```
 
-{% capture usercontext_js_challenge %}
+```jsx
+// contexts/UserContext.js
 //create UserContext
 
 export default UserContext;
-{% endcapture %}
-
-{% include playground.html
-  id="challenge-user-status"
-  title="Challenge : Statut utilisateur"
-  my_js=app_js_challenge
-  my_css=app_css_challenge
-  default_tab="js"
-%}
+```
 
 ### Critères de validation
 
